@@ -11,6 +11,10 @@ import java.util.Random;
 
 public class Player extends GameCharackterType{
 
+    public String getName() {
+        return name;
+    }
+
     String name;
 
     Boolean female = false;
@@ -81,14 +85,14 @@ public class Player extends GameCharackterType{
             """
                     + this.name  +
                     """
-                    nun wähle deine Rasse: 
+                    Nun wähle dein Element aus: 
                     """ + delimiter + breakLine +
                     """
-                    1.) Vampir
-                    2.) Nekromant
-                    3.) Zwerg
-                    4.) Zauberer
-                    5.) Krieger
+                    1.) Feuer
+                    2.) Wasser
+                    3.) Wind
+                    4.) Erde
+                    5.) Metall
                     """ + delimiter + breakLine;
 
     void setupPlayer() throws IOException {
