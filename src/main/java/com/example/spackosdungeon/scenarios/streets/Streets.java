@@ -1,15 +1,18 @@
-package com.example.spackosdungeon.levels.streets;
+package com.example.spackosdungeon.scenarios.streets;
 
-public class Streets {
+import java.util.ArrayList;
 
-    final String BASIC_DESCRIPTION_FORWARD = "Ihr macht ein Paar Schritte und seht ";
-    final String BASIC_DESCRIPTION_BACKWARD = "Ihr geht in die Richtung zurück aus der ihr gekommen seid ";
-    final String BASIC_DESCRIPTION_RIGHT = "Ihr biegt rechts ab und seht ";
-    final String BASIC_DESCRIPTION_LEFT = "Ihr biegt links ab und seht ";
-    final String BUILDING_DESCRIPTION = "Ihr seht ein Gebäude ";
-    public String plaza_variable_description = "";
-    final String PLAZA_DESCRIPTION = "Ihr kommt an einen Platz, ";
+/**
+ * Each street can hold multiple scenarios which can be buildings, structures and other stuff
+ * */
+public class Streets extends Scenario{
 
+
+    ArrayList<Scenario> scenarios = new ArrayList<>();
+
+    public Streets(ScenarioObjectTypes scenarioObjectTypes, String plaza_variable_description, String custom_description, String scenario_description) {
+        super(scenarioObjectTypes, plaza_variable_description, custom_description, scenario_description);
+    }
 
     public String getBASIC_DESCRIPTION_FORWARD() {
         return BASIC_DESCRIPTION_FORWARD;

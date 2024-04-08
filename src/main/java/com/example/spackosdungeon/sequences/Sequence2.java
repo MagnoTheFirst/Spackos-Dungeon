@@ -31,29 +31,4 @@ public class Sequence2 extends Sequence{
             String input = read_string_input(akt1);
         }
     }
-
-    public String checkDirection(String direction, String forward, String backward, String right, String left){
-        switch(direction){
-            case "w":
-                return forward;
-            case "s":
-                return backward;
-            case "a":
-                return left;
-            case "d":
-                return right;
-            default:
-                return "Ungültige Eingabe";
-        }
-    }
-
-    /***
-     * The number of the str
-     * @param scenario_number
-     * @return
-     * TODO[] complete
-     */
-    public Object load_scenario(String direction, int scenario_number){
-        return null;
-    }
 }

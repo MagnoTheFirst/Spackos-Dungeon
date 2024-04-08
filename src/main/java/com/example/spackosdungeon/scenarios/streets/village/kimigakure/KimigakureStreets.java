@@ -1,9 +1,14 @@
-package com.example.spackosdungeon.levels.streets.kimigakure;
+package com.example.spackosdungeon.scenarios.streets.village.kimigakure;
 
-import com.example.spackosdungeon.levels.streets.Streets;
+import com.example.spackosdungeon.scenarios.streets.ScenarioObjectTypes;
+import com.example.spackosdungeon.scenarios.streets.Streets;
 
 public class KimigakureStreets extends Streets {
 
+    //TODO[] reduce to one description per street and direction and put it into a List in the village Object
+    public KimigakureStreets(ScenarioObjectTypes scenarioObjectTypes, String plaza_variable_description, String custom_description, String scenario_description) {
+        super(scenarioObjectTypes, plaza_variable_description, custom_description, scenario_description);
+    }
 
     final String FORWARD_STREET_1 =  getBASIC_DESCRIPTION_FORWARD() +"""
             Strasse vorne 1
@@ -44,4 +49,5 @@ public class KimigakureStreets extends Streets {
     final String BACK_TO_THE_GATE = """
             Zurück zum Tor
             """;
+
 }
