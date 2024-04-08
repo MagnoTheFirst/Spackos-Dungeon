@@ -17,22 +17,10 @@ public class Player extends GameCharackterType{
 
     String name;
 
-    Boolean female = false;
+    public Boolean female = false;
     List<Item> bag;
     Integer joker = 2;
-    Types charackterType;
 
-    String attackName;
-    String attackDescription;
-    Integer damage;
-
-    String defenseName;
-    String defenseDescription;
-    Integer defensePower;
-
-
-    String delimiter = "____________________________________________________________________ \n";
-    String breakLine = "\n";
     String initializeCharakterText1 =
             """
             Bitte gib den Namen ein mit dem du wünschst zu Spielen...
@@ -112,7 +100,7 @@ public class Player extends GameCharackterType{
         if(Integer.parseInt(reader.readLine())==1){
             this.female = true;
         }
-        else if(Integer.parseInt(reader.readLine())==2){
+        else{
             this.female = false;
         }
         System.out.println(getCharackterType);
@@ -209,22 +197,11 @@ public class Player extends GameCharackterType{
         System.out.println();
     }
 
-    Integer attack(){
-        return this.damage * rollTheDice();
+    @Override
+    public Integer hitEnemy(){
+        return rollTheDice() * 10;
     }
 
-    Integer defend(){
-        return this.defensePower * rollTheDice();
-    }
-
-    Integer rollTheDice(){
-        Random random = new Random(); // Eine Instanz von Random erstellen
-
-
-        int dice = 1 + random.nextInt(12); // Generiert eine zufällige Ganzzahl zwischen 0 (inklusive) und 100 (inklusive)
-
-        return dice;
-    }
 
 }
 
