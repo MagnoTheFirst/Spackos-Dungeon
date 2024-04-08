@@ -75,10 +75,11 @@ public class Sequence {
         }
     }
 
+    //TODO[] check if this is the right place to implement the game loop or if it should be placed in the Game Class and inheritted to this class
     public void sequence_loop(){
-        Scenario currentScenario
+        Scenario currentScenario;
         while(isMoving == true){
-            check
+
         }
     }
 }

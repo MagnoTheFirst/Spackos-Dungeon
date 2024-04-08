@@ -45,4 +45,8 @@ public class Streets extends Scenario{
     public void setPlaza_variable_description(String plaza_variable_description) {
         this.plaza_variable_description = plaza_variable_description;
     }
+
+    public void add_scenario_to_street(Scenario scenario){
+        this.scenarios.add(scenario);
+    }
 }
