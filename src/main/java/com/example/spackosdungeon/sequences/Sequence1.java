@@ -111,6 +111,7 @@ public class Sequence1 extends Sequence{
                         Handelt es sich um Freund oder Feind? 
                         Was wollt ihr tun?
                                 """;
+        System.out.println(text);
         akt_2_interaktion_1();
         //sequenz_2_raetsel_1();
         return text;

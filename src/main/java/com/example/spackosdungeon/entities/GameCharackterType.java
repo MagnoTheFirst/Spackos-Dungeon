@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 public class GameCharackterType {
-    Types charackterType;
+   Types charackterType;
 
     String attackName;
     String attackDescription;

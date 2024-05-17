@@ -11,6 +11,8 @@ import java.util.Random;
 
 public class Player extends GameCharackterType{
 
+    int xKoordinate=0;
+    int yKoordinate=0;
     public String getName() {
         return name;
     }
@@ -46,6 +48,9 @@ public class Player extends GameCharackterType{
     public Player() throws IOException {
         setupPlayer();
 
+    }
+
+    public Player(String test) throws IOException {
     }
 
     void died(){
@@ -202,6 +207,72 @@ public class Player extends GameCharackterType{
         return rollTheDice() * 10;
     }
 
+    public void clearPossition(){
+        this.xKoordinate = 0;
+        this.yKoordinate = 0;
+    }
 
+    public int[] move(int x, int y){
+        int[] position = new int[2];
+        System.out.println("Eure aktuelle Position ist \n" +showPossition());
+        this.xKoordinate += x;
+        this.yKoordinate += y;
+        System.out.println("Eure neue Position ist \n" +showPossition());
+        position[0] =xKoordinate;
+        position[1] =yKoordinate;
+        return position;
+    }
+
+    public String showPossition(){
+        String[][] xGatter = {{" [ ] "," [ ] "," [ ] "},{" [ ] "," [ ] "," [ ] "},{" [ ] "," [ ] "," [ ] "}};
+
+
+        String output = """
+                
+                """;
+        for(int i = 0; i < 3; i++){
+            output += "\n";
+            for(int j = 0; j < 3; j++){
+                if(j==xKoordinate && i==yKoordinate){
+                    output += " [X] ";
+                }else{
+                    output += xGatter[i][j];
+                }
+
+            }
+        }
+        return output;
+    }
+
+    private boolean isMoveAllowed(String direction){
+        switch(direction){
+            case "w":
+                if(yKoordinate == 0){
+                    return false;
+                }else{
+                    return true;
+                }
+            case "s":
+                if(yKoordinate == 2){
+                    return false;
+                }else{
+                    return true;
+                }
+            case "a":
+                if(xKoordinate == 0){
+                    return false;
+                }else{
+                    return true;
+                }
+            case "d":
+                if(xKoordinate == 2){
+                    return false;
+                }else{
+                    return true;
+                }
+            default:
+                return false;
+        }
+    }
 }
 

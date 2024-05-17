@@ -1,9 +1,7 @@
 package com.example.spackosdungeon.entities;
 
 import com.example.spackosdungeon.config.ConsoleColors;
-import com.example.spackosdungeon.sequences.Intro;
-import com.example.spackosdungeon.sequences.Sequence;
-import com.example.spackosdungeon.sequences.Sequence1;
+import com.example.spackosdungeon.sequences.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,9 +10,9 @@ import java.io.InputStreamReader;
 public class Game extends Sequence {
     Intro intro = new Intro();
     Sequence1 s1;
-    Sequence1 s2;
-    Sequence1 s3;
-    Sequence1 s4;
+    Sequence2 s2;
+    Sequence3 s3;
+    Sequence4 s4;
 
     public Game() throws IOException {
 
@@ -22,16 +20,18 @@ public class Game extends Sequence {
         this.player1 = new Player();
         this.player2 = new Player();
         this.s1 = new Sequence1();
-        this.s2 = new Sequence1();
-        this.s3 = new Sequence1();
-        this.s4 = new Sequence1();
+        this.s2 = new Sequence2();
+        this.s3 = new Sequence3();
+        this.s4 = new Sequence4();
     }
 
     public void startGame() throws IOException {
 
-        s1.akt1();
+        System.out.println(s1.akt1());
         s1.akt2();
-        s1.outro();
+        System.out.println(s1.outro());
+        s2.getIntro();
+        s2.akt1_move_in_city();
 
     }
 
